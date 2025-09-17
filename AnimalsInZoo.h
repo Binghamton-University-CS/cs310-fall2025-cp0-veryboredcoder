@@ -8,16 +8,30 @@
 using namespace std;
 
 class AnimalsInZoo{
- public:
-  AnimalsInZoo(Animal a);
+	public:
+		//Constructors
+  		AnimalsInZoo();
 
- AnimalsInZoo();
+		AnimalsInZoo(unsigned int initial_capacity);
 
-  void display();
+		//Methods Below
+  		bool store(Animal &another_anima);
 
- private:
-  int numAnimals;
-  Animal animal;
+		bool remove(const string &animal_name);
+
+		Animal find(const string &animal_name);
+
+		void readSizes(unsigned int &count, unsigned int &capacity);
+
+		void show() const;
+
+		unsigned int makeSpace(unsigned int how_many);
+
+ 	private:
+  		
+		Animal* animals;
+  		unsigned int zooCapacity;
+  		unsigned int animalCount;
 };
 
 #endif

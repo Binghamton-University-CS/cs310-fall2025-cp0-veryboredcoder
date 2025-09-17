@@ -5,17 +5,29 @@
 
 using namespace std;
 
-Animal::Animal(string s, unsigned int year) {
-  species = s;
-  year_discovered = year;
+//Constructor (3 parameters) defined
+Animal::Animal(string n, float w, bool d) {
+	animalName = n;
+	weight = w;
+	isDangerous = d;
 }
 
+//default
 Animal::Animal(){
-  species = "";
-  year_discovered = 0;
+	animalName = "";
+	weight = 0;
+	isDangerous = false;
 }
 
-void Animal::display()
-{
-  cout << species << " [" << year_discovered << "]" << endl;
+//Accessor Methods Defined below
+string Animal::get_name() const{
+	return animalName;
+}
+
+void Animal::display(){
+	cout << animalName << ", " << weight << " lbs";
+	if(isDangerous)
+		cout << " be careful!" << endl;
+	else
+		cout << endl;
 }

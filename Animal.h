@@ -3,19 +3,25 @@
 #include <iostream>
 #include <stdlib.h>
 
-
 using namespace std;
 
 class Animal{
-   public:
-  Animal(string speciesName, unsigned int discoveryYear);
-      Animal();
+	
+	public:
+		//Constructors below
+		Animal();
 
-  void display();
+  		Animal(string name, float heaviness, bool dangerousness);
 
-   private:
-      string species;
-      unsigned int year_discovered;
+  		//Accessor methods
+  		string get_name() const;
+
+		void display();
+
+	private:
+  		string animalName;
+  		float weight;
+  		bool isDangerous;
 };
 
 #endif
